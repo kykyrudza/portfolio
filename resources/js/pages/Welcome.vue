@@ -37,22 +37,22 @@ const techStack = [
     {
         name: "Laravel",
         description: "My main tool. I use Laravel to build powerful and efficient backends.",
-        logo: "./storage/images/laravel.png"
+        logo: "./images/laravel.png"
     },
     {
         name: "Inertia",
         description: "Laravel + Vue without API hassle. Perfect for building fast and interactive SPA apps.",
-        logo: "./storage/images/inertiajs.png"
+        logo: "./images/inertiajs.png"
     },
     {
         name: "Tailwind CSS",
         description: "If no one wants to handle the frontend, I'll style it up quickly with Tailwind.",
-        logo: "./storage/images/tailwindcss.png"
+        logo: "./images/tailwindcss.png"
     },
     {
         name: "Vue.js",
         description: "Not a frontend dev, but I can handle the basics of Vue just fine.",
-        logo: "./storage/images/vuejs.png"
+        logo: "./images/vuejs.png"
     },
 ];
 
@@ -128,10 +128,12 @@ defineProps<{
                         Technology stack
                     </h2>
                     <div class="mt-4 flex flex-wrap justify-between h-full gap-4">
-                        <div v-for="tech in techStack" :key="tech.name" class="flex flex-col items-center">
-                            <img :src="tech.logo" :alt="tech.name" class="w-full max-w-80 h-full max-h-80 aspect-video rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                            <span class="mt-2 text-gray-700 dark:text-gray-300">{{ tech.name }}</span>
-                            <span class="mt-2 text-gray-700 dark:text-gray-300 max-w-[320px]">{{ tech.description }}</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+                            <div v-for="tech in techStack" :key="tech.name" class="flex flex-col p-4">
+                                <img :src="tech.logo" :alt="tech.name" class="w-full max-w-40 h-auto rounded-xl ">
+                                <span class="mt-2 text-gray-900 dark:text-gray-300 font-semibold">{{ tech.name }}</span>
+                                <span class="mt-1 text-gray-700 dark:text-gray-300  max-w-[300px] text-sm">{{ tech.description }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
